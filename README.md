@@ -118,7 +118,7 @@ Default admin (development):
   <li>Password: <b>admin123</b></li>
 </ul>
 
-<p><i>*Password sebaiknya diganti saat production</i></p>
+<!-- <p><i>*Password sebaiknya diganti saat production</i></p> -->
 
 <hr/>
 
@@ -166,8 +166,8 @@ EduLearn dikembangkan sebagai:
 <h2>👤 Author</h2>
 
 <p>
-<b>Darren</b><br/>
-Informatics Student & Aspiring Software Engineer
+<b>Frizzia Darren</b><br/>
+Computer Science Student & Aspiring Software Engineer
 </p>
 
 <p>

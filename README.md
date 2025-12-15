@@ -1,32 +1,185 @@
-<<<<<<< HEAD
-# EduLearn
-🚀 EduLearn: Micro-Learning Platform (Supporting SDG 4) 
+<h1 align="center">🎓 EduLearn</h1>
+<p align="center">
+  <b>Modern E-Learning Platform with Admin Dashboard, Dark Mode & Premium UI</b>
+</p>
 
-EduLearn is a simple, efficient, web-based micro-learning platform focused on providing concise and easily digestible educational materials. This project is built using the Laravel 11 framework for the backend and a responsive admin interface utilizing Bootstrap 5. It aims to address the challenge of limited access to brief educational materials and overly complex online learning.
+<p align="center">
+  <img src="https://img.shields.io/badge/Laravel-11-red" />
+  <img src="https://img.shields.io/badge/PHP-8.4-blue" />
+  <img src="https://img.shields.io/badge/Bootstrap-5.3-purple" />
+  <img src="https://img.shields.io/badge/Status-Active%20Development-success" />
+</p>
 
+<hr/>
 
-✨ Core Features 
+<h2>📌 Project Overview</h2>
 
-Category Management: Administrators can create, edit, and delete categories (e.g., Programming, Science, Design, Language) to organize learning materials.
-Teacher Management: The system manages teacher data based on their field of expertise , allowing administrators to create, edit, and delete teachers. This connects materials to specific instructors to enhance content credibility.
-Course Management: The core feature involves managing brief learning materials, including fields such as title, description (micro-learning notes), category_id, and teacher_id. Admin functions include CRUD (Create, Read, Update, Delete) operations for courses.
-Public Course Display: Users (visitors) can freely access and browse all learning materials without needing to log in. Users can view the course list, course details, and browse courses by category or teacher.
-Admin Dashboard: A feature that enables the Admin to manage all data through Blade Templates and Bootstrap, including data tables and input forms.
-Database Relational Structure: Utilizes One-to-Many relationships: Category (1) - (N) Course and Teacher (1) - (N) Course.
+<p>
+<b>EduLearn</b> adalah platform pembelajaran online berbasis web yang dirancang
+dengan pendekatan <i>modern UI/UX</i>, mendukung <b>Dark Mode</b>, serta dilengkapi
+<b>Admin Dashboard profesional</b> untuk mengelola konten pembelajaran.
+</p>
 
+<p>
+Project ini dikembangkan menggunakan <b>Laravel 11</b> dan <b>Bootstrap 5</b>
+dengan fokus pada:
+</p>
 
-💻 Technologies Used 
+<ul>
+  <li>Struktur kode yang rapi & scalable</li>
+  <li>Pengalaman pengguna yang smooth & premium</li>
+  <li>Separation antara halaman publik & admin</li>
+</ul>
 
-Backend: Laravel 11 
-Database: MySQL 
-Admin Interface: Bootstrap 5 & Blade Templates 
-Other Tools: PHP 8+, Composer, FakerPHP (Seeder) 
+<hr/>
 
+<h2>✨ Key Features</h2>
 
-🎯 Project Goal (SDG 4: Quality Education) 
+<h3>🌐 Public (User Side)</h3>
+<ul>
+  <li>Homepage dengan <b>hero background dinamis</b></li>
+  <li>Daftar Courses, Categories, dan Teachers</li>
+  <li>Dark Mode & Light Mode (persist via LocalStorage)</li>
+  <li>Navbar premium dengan smooth transition & underline animation</li>
+  <li>Responsive design (mobile-friendly)</li>
+</ul>
 
-EduLearn supports Sustainable Development Goal (SDG) 4: Quality Education by providing equitable access to digital learning, offering concise, micro-learning based materials, and supporting flexible, continuous learning through technology.
-=======
+<h3>🛠️ Admin Panel</h3>
+<ul>
+  <li>Admin Login Authentication</li>
+  <li>Modern Admin Dashboard</li>
+  <li>CRUD Categories, Teachers, Courses</li>
+  <li>Modal-based Create & Edit (tanpa reload halaman)</li>
+  <li>Toast notification (success & error)</li>
+  <li>Dark Mode sync dengan halaman public</li>
+</ul>
+
+<hr/>
+
+<h2>🎨 UI / UX Highlights</h2>
+
+<ul>
+  <li>Premium navbar dengan hover underline</li>
+  <li>Smooth page transition & image fade-in</li>
+  <li>Modern cards dengan hover animation</li>
+  <li>Dark Mode yang konsisten di seluruh halaman</li>
+</ul>
+
+<hr/>
+
+<h2>🧱 Tech Stack</h2>
+
+<ul>
+  <li><b>Framework:</b> Laravel 11</li>
+  <li><b>Language:</b> PHP 8.4</li>
+  <li><b>Frontend:</b> Blade, Bootstrap 5.3</li>
+  <li><b>Icons:</b> Bootstrap Icons</li>
+  <li><b>Editor:</b> TinyMCE</li>
+  <li><b>Database:</b> MySQL</li>
+  <li><b>Version Control:</b> Git & GitHub</li>
+</ul>
+
+<hr/>
+
+<h2>📂 Project Structure (Simplified)</h2>
+
+<pre>
+app/
+ └── Http/Controllers/
+     └── Admin/
+         ├── DashboardController.php
+         ├── CourseController.php
+         ├── CategoryController.php
+         └── TeacherController.php
+
+resources/views/
+ ├── layouts/
+ ├── admin/
+ ├── home.blade.php
+ ├── courses/
+ ├── categories/
+ └── teachers/
+</pre>
+
+<hr/>
+
+<h2>🔐 Admin Access</h2>
+
+<p>
+Admin panel hanya dapat diakses setelah login.
+</p>
+
+<p>
+Default admin (development):
+</p>
+
+<ul>
+  <li>Email: <b>admin@edulearn.com</b></li>
+  <li>Password: <b>admin123</b></li>
+</ul>
+
+<p><i>*Password sebaiknya diganti saat production</i></p>
+
+<hr/>
+
+<h2>🚀 Installation & Run</h2>
+
+<pre>
+git clone https://github.com/CodeInfiltrator/EduLearn.git
+cd EduLearn
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan serve
+</pre>
+
+<hr/>
+
+<h2>📈 Development Progress</h2>
+
+<ul>
+  <li>✔ Public Pages (Home, Courses, Categories, Teachers)</li>
+  <li>✔ Admin Dashboard</li>
+  <li>✔ CRUD System</li>
+  <li>✔ Dark Mode Sync</li>
+  <li>✔ Authentication</li>
+  <li>⬜ Deployment (coming soon)</li>
+</ul>
+
+<hr/>
+
+<h2>🎯 Goals</h2>
+
+<p>
+EduLearn dikembangkan sebagai:
+</p>
+
+<ul>
+  <li>Project akademik dengan nilai maksimal</li>
+  <li>Portfolio web developer profesional</li>
+  <li>Fondasi untuk pengembangan e-learning system skala besar</li>
+</ul>
+
+<hr/>
+
+<h2>👤 Author</h2>
+
+<p>
+<b>Darren</b><br/>
+Informatics Student & Aspiring Software Engineer
+</p>
+
+<p>
+GitHub: <a href="https://github.com/CodeInfiltrator">https://github.com/CodeInfiltrator</a>
+</p>
+
+<hr/>
+
+<p align="center">
+✨ <b>EduLearn — Learn Smart, Learn Better</b> ✨
+</p>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

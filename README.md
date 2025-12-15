@@ -152,13 +152,27 @@ php artisan serve
 <h2>🎯 Goals</h2>
 
 <p>
-EduLearn dikembangkan sebagai:
+EduLearn bertujuan untuk mengembangkan sebuah platform pembelajaran berbasis web 
+yang mudah digunakan, mudah diakses, dan relevan dengan kebutuhan pembelajaran modern.
 </p>
 
 <ul>
-  <li>Project akademik dengan nilai maksimal</li>
-  <li>Portfolio web developer profesional</li>
-  <li>Fondasi untuk pengembangan e-learning system skala besar</li>
+  <li>
+    Menyediakan sistem e-learning yang sederhana, terstruktur, dan ramah pengguna
+  </li>
+  <li>
+    Mendukung Sustainable Development Goals (SDG) ke-4: 
+    <strong>Quality Education</strong> dengan memperluas akses pembelajaran digital
+  </li>
+  <li>
+    Menjadi proyek akademik yang menunjukkan penerapan konsep Web Programming secara nyata
+  </li>
+  <li>
+    Menjadi portfolio profesional yang mencerminkan kemampuan pengembangan aplikasi web modern
+  </li>
+  <li>
+    Menjadi fondasi untuk pengembangan sistem pembelajaran digital berskala lebih besar di masa depan
+  </li>
 </ul>
 
 <hr/>

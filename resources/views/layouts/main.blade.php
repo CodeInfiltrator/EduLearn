@@ -91,6 +91,63 @@
             border-color: #3a3a3c;
         }
 
+        /* ============================= */
+        /* HERO VIDEO SECTION            */
+        /* ============================= */
+        .hero-wrapper {
+            min-height: 420px;
+            position: relative;
+        }
+
+        /* fallback animated gradient */
+        .hero-wrapper::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(270deg, #0d6efd, #6610f2, #198754);
+            background-size: 600% 600%;
+            animation: gradientMove 16s ease infinite;
+            z-index: 0;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* video */
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        /* overlay */
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 2;
+        }
+
+        /* content */
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            padding: 80px 40px;
+            max-width: 900px;
+        }
+
+        /* dark mode stronger overlay */
+        .dark-mode .hero-overlay {
+            background: rgba(0,0,0,0.7);
+        }
+
+
         /* small responsive tweaks */
         @media (max-width: 767px) {
             .hero-text { font-size: 1.15rem; }

@@ -1,6 +1,6 @@
 <h1 align="center">🎓 EduLearn</h1>
 <p align="center">
-  <b>Modern E-Learning Platform with Admin Dashboard, Dark Mode & Premium UI</b>
+  <b>Modern E-Learning Platform</b>
 </p>
 
 <p align="center">

@@ -14,11 +14,23 @@ use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $courses = Course::with(['category', 'teacher'])->get();
-        return view('courses.index', compact('courses'));
+        $categories = Category::all();
+
+        $courses = Course::with(['category', 'teacher'])
+            ->when($request->search, function ($query) use ($request) {
+                $query->where('title', 'like', '%' . $request->search . '%');
+            })
+            ->when($request->category, function ($query) use ($request) {
+                $query->where('category_id', $request->category);
+            })
+            ->latest()
+            ->get();
+
+        return view('courses.index', compact('courses', 'categories'));
     }
+
 
     public function show($id)
     {
@@ -64,5 +76,15 @@ class CourseController extends Controller
         Course::destroy($id);
         return redirect('/admin/courses');
     }
+
+    public function learn(Course $course)
+    {
+        $course->load(['lessons' => function ($q) {
+            $q->orderBy('order');
+        }]);
+
+        return view('courses.learn', compact('course'));
+    }
+
 }
 

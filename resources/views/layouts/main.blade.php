@@ -147,6 +147,15 @@
             background: rgba(0,0,0,0.7);
         }
 
+        .course-description p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .dark-mode .course-description p {
+            color: #ddd;
+        }
 
         /* small responsive tweaks */
         @media (max-width: 767px) {

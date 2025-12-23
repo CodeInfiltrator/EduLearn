@@ -44,29 +44,82 @@
                     </a>
                 </li>
 
-                <!-- ADMIN AUTH -->
+                <!-- AUTH SECTION -->
                 @auth
+                    {{-- ================= ADMIN MODE ================= --}}
+                    @if(auth()->user()->role === 'admin')
+
+                        <li class="nav-item">
+                            <span class="nav-link fw-semibold text-primary">
+                                👑 Admin
+                            </span>
+                        </li>
+
+                        {{-- Jika admin sedang di halaman PUBLIC --}}
+                        @if(!Request::is('admin*'))
+                        <li class="nav-item ms-2">
+                            <a href="{{ url('/admin') }}" class="btn btn-outline-primary btn-sm">
+                                <i class="bi bi-arrow-left-circle me-1"></i>
+                                Dashboard
+                            </a>
+                        </li>
+                        @endif
+
+                        <li class="nav-item ms-2">
+                            <form method="POST" action="{{ route('admin.logout') }}">
+                                @csrf
+                                <button class="btn btn-outline-danger btn-sm">
+                                    <i class="bi bi-box-arrow-right me-1"></i> Logout
+                                </button>
+                            </form>
+                        </li>
+
+                    {{-- ================= STUDENT MODE ================= --}}
+                    @elseif(auth()->user()->role === 'student')
+
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::is('my-courses') ? 'active' : '' }}"
+                            href="{{ route('mycourses') }}">
+                                My Courses
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <span class="nav-link fw-semibold">
+                                Hi, {{ auth()->user()->name }}
+                            </span>
+                        </li>
+
+                        <li class="nav-item ms-2">
+                            <form method="POST" action="/logout">
+                                @csrf
+                                <button class="btn btn-outline-danger btn-sm">
+                                    <i class="bi bi-box-arrow-right me-1"></i> Logout
+                                </button>
+                            </form>
+                        </li>
+
+                    @endif
+
+                @else
+                    {{-- ================= GUEST MODE ================= --}}
+
+                    {{-- STUDENT LOGIN --}}
                     <li class="nav-item ms-3">
-                        <a href="{{ url('/admin') }}" class="btn btn-outline-primary fw-semibold px-3">
-                            <i class="bi bi-speedometer2 me-1"></i> Dashboard
+                        <a href="/login" class="btn btn-outline-primary fw-semibold px-3">
+                            <i class="bi bi-person me-1"></i> Login
                         </a>
                     </li>
 
+                    {{-- ADMIN LOGIN --}}
                     <li class="nav-item ms-2">
-                        <form method="POST" action="{{ route('admin.logout') }}">
-                            @csrf
-                            <button class="btn btn-outline-danger px-3">
-                                <i class="bi bi-box-arrow-right me-1"></i> Logout
-                            </button>
-                        </form>
-                    </li>
-                @else
-                    <li class="nav-item ms-3">
-                        <a href="{{ url('/admin/login') }}" class="btn btn-outline-primary fw-semibold px-3">
-                            <i class="bi bi-shield-lock me-1"></i> Admin Panel
+                        <a href="/admin/login" class="btn btn-outline-dark fw-semibold px-3">
+                            <i class="bi bi-shield-lock me-1"></i> Admin
                         </a>
                     </li>
                 @endauth
+
+
 
                 <!-- DARK / LIGHT TOGGLE -->
                 <li class="nav-item ms-3">

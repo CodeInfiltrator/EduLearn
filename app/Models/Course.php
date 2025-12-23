@@ -17,5 +17,15 @@ class Course extends Model
     {
         return $this->belongsTo(Teacher::class);
     }
+    public function students()
+    {
+        return $this->belongsToMany(User::class)->withTimestamps();
+        return $this->belongsToMany(User::class, 'enrollments')
+                ->withTimestamps();
+    }
+    public function lessons()
+    {
+        return $this->hasMany(Lesson::class)->orderBy('order');
+    }
 }
 
